@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+// 按鈕
 class Square extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,14 @@ class Square extends React.Component {
   }
 }
 
+// 九宮格
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    };
+  }
   renderSquare(i) {
     return <Square value={i} />;
   }
@@ -49,6 +57,7 @@ class Board extends React.Component {
   }
 }
 
+// 完整的遊戲畫面
 class Game extends React.Component {
   render() {
     return (
